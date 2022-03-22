@@ -41,5 +41,8 @@ app.listen(8080, () => {
 })
 
 app.get('/ParOuImpar', (req, res) => {
-  const par =  parseInt()
+  const par =  parseInt(req.query.numero) % 2 === 0
+  res.send({
+      resultado: par ? 'Par':'Impar'
+  })
 })
